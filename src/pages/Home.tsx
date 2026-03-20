@@ -2,9 +2,12 @@ import { Button } from '../components/ui/Button';
 import { SectionTitle } from '../components/ui/SectionTitle';
 import { Clock, Star, Zap, MapPin } from 'lucide-react';
 import { TemplateBanner } from '../components/ui/TemplateBanner';
+import { useNavigate } from 'react-router';
 
 export function Home() {
   const waLink = `https://wa.me/5511999999999?text=${encodeURIComponent("Olá, vim pelo site e gostaria de agendar um horário!")}`;
+
+  const navigate = useNavigate();
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -60,7 +63,7 @@ export function Home() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button variant="outline" onClick={() => window.location.href = '/servicos'}>Ver Todos os Serviços</Button>
+            <Button variant="outline" onClick={() => navigate('/servicos')}>Ver Todos os Serviços</Button>
           </div>
         </div>
       </section>

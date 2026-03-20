@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { Scissors, MapPin, Phone, Clock, Instagram, Facebook, Settings } from 'lucide-react';
 import { useConsent } from '../../contexts/ConsentContext';
 

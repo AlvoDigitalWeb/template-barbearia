@@ -1,7 +1,7 @@
 import React from 'react';
 import { useConsent } from '../../contexts/ConsentContext';
 import { ShieldCheck } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 export const CookieBanner: React.FC = () => {
   const { hasResponded, acceptAll, rejectAll, openManager } = useConsent();
