@@ -1,12 +1,14 @@
 import { Button } from '../components/ui/Button';
 import { SectionTitle } from '../components/ui/SectionTitle';
 import { Clock, Star, Zap, MapPin } from 'lucide-react';
+import { TemplateBanner } from '../components/ui/TemplateBanner';
 
 export function Home() {
   const waLink = `https://wa.me/5511999999999?text=${encodeURIComponent("Olá, vim pelo site e gostaria de agendar um horário!")}`;
 
   return (
     <div className="flex flex-col min-h-screen">
+      <TemplateBanner />
 
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
@@ -52,7 +54,7 @@ export function Home() {
                 <p className="text-gray-400 mb-6 flex-1">{service.desc}</p>
                 <div className="flex items-center justify-between mt-auto">
                   <span className="text-xl font-bold text-orange-brand">{service.price}</span>
-                  <Button variant="ghost" size="sm" onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(`Olá, vim pelo site e gostaria de agendar um ${service.title}`)}`, '_blank')}>Agendar</Button>
+                  <Button variant="outlineWhite" size="sm" onClick={() => window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(`Olá, vim pelo site e gostaria de agendar um ${service.title}`)}`, '_blank')}>Agendar</Button>
                 </div>
               </div>
             ))}

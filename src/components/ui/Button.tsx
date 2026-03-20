@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'outline' | 'ghost' | 'whatsapp';
+  variant?: 'primary' | 'outline' | 'ghost' | 'whatsapp' | 'outlineWhite';
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
 }
@@ -21,7 +21,8 @@ export function Button({
     primary: 'bg-orange-brand text-white-soft hover:bg-orange-600 focus:ring-orange-brand',
     outline: 'border-2 border-orange-brand text-orange-brand hover:bg-orange-brand hover:text-white-soft focus:ring-orange-brand',
     ghost: 'text-white-soft hover:text-orange-brand hover:bg-gray-dark focus:ring-white-soft',
-    whatsapp: 'bg-[#25D366] text-white-soft hover:bg-[#128C7E] focus:ring-[#25D366]'
+    whatsapp: 'bg-[#25D366] text-white-soft hover:bg-[#128C7E] focus:ring-[#25D366]',
+    outlineWhite: 'border-2 border-white-soft text-white-soft hover:bg-white-soft hover:text-black-deep focus:ring-white-soft'
   };
 
   const sizes = {

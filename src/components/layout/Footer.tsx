@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Scissors, MapPin, Phone, Clock, Instagram, Facebook } from 'lucide-react';
+import { Scissors, MapPin, Phone, Clock, Instagram, Facebook, Settings } from 'lucide-react';
+import { useConsent } from '../../contexts/ConsentContext';
 
 export function Footer() {
+  const { openManager } = useConsent();
   return (
     <footer className="bg-black-deep border-t border-gray-dark pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,6 +28,13 @@ export function Footer() {
               <a href="#" className="text-gray-400 hover:text-orange-brand transition-colors">
                 <Facebook className="h-6 w-6" />
                 <span className="sr-only">Facebook</span>
+              </a>
+              <a href={`https://wa.me/5511999999999?text=${encodeURIComponent("Olá, vim pelo site e gostaria de agendar um horário")}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-brand transition-colors">
+                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+                  <path d="M9 10a.5 .5 0 0 0 1 0V9a.5 .5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0-1h-1a.5 .5 0 0 0 0 1" />
+                </svg>
+                <span className="sr-only">WhatsApp</span>
               </a>
             </div>
           </div>
@@ -92,6 +101,16 @@ export function Footer() {
           <p className="text-gray-600 text-xs mt-2 md:mt-0 font-sans">
             Desenvolvido por <a href="https://www.alvodigitalweb.pt" target="_blank" rel="noopener noreferrer"><span className="text-orange-brand hover:text-white-soft cursor-pointer transition-colors">Alvo Digital Web</span></a>
           </p>
+          <div className="flex gap-4 mt-4 md:mt-0">
+            <Link to="/politica-privacidade" className="text-gray-500 hover:text-orange-brand text-[10px] uppercase tracking-widest transition-colors font-bold">Privacidade</Link>
+            <Link to="/politica-cookies" className="text-gray-500 hover:text-orange-brand text-[10px] uppercase tracking-widest transition-colors font-bold">Cookies</Link>
+            <button 
+              onClick={openManager}
+              className="text-gray-500 hover:text-orange-brand text-[10px] uppercase tracking-widest transition-colors font-bold flex items-center gap-1 cursor-pointer"
+            >
+              <Settings className="w-3 h-3" /> Gerir Cookies
+            </button>
+          </div>
         </div>
       </div>
     </footer>

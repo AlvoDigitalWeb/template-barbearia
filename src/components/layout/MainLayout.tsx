@@ -2,6 +2,8 @@ import { Outlet } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { WhatsAppFloatingButton } from '../ui/WhatsAppFloatingButton';
+import { CookieBanner } from '../ui/CookieBanner';
+import { CookieManager } from '../ui/CookieManager';
 
 export function MainLayout() {
   return (
@@ -12,6 +14,8 @@ export function MainLayout() {
       </main>
       <Footer />
       <WhatsAppFloatingButton />
+      <CookieBanner />
+      <CookieManager />
     </div>
   );
 }
